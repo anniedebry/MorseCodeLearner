@@ -9,8 +9,10 @@ import morse.view.MorseFrame;
 public class MorseController
 {
 	private MorseFrame frame;
+	private MorseChat chat;
 	
 	public MorseController() {
+		this.chat = new MorseChat();
 		frame = new MorseFrame(this);
 	}
 	
@@ -21,7 +23,7 @@ public class MorseController
 	public String interactWithMorseCodeSentences(String text) {
 		String response = "";
 		
-		response += MorseChat.processTextSentences(text);
+		response += chat.processTextSentences(text) + "/n";
 		
 		return response;
 	}
@@ -29,7 +31,7 @@ public class MorseController
 	public String interactWithMorseCodeAlphabet(String text) {
 		String response = "";
 		
-		response += MorseChat.processTextAlphabet(text);
+		response += chat.processTextAlphabet(text);
 		
 		return response;
 	}

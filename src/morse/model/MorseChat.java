@@ -5,18 +5,24 @@ import java.util.HashMap;
 import java.io.*;
 import java.util.*;
 
+
 public class MorseChat
 {
-	private String name;
 	private ArrayList<String> userInputs;
 	private ArrayList<String> chatResponses;
 	
-	public MorseChat(String name) {
-		this.name = name;
+	public MorseChat() {
 		this.userInputs = new ArrayList<String>();
 		this.chatResponses = new ArrayList<String>();
 		
 		//alphabet hash map
+		
+	}
+	
+	//Alphabet random number 
+	private String alphabetMap() {
+		
+		String letter = "";
 		
 		HashMap<String, String> morseAlphabet = new HashMap<String, String>();
 		
@@ -46,49 +52,38 @@ public class MorseChat
 		morseAlphabet.put("X", "-..-");
 		morseAlphabet.put("Y", "-.--");
 		morseAlphabet.put("Z", "--..");
+//		
+//		Random generator = new Random();
+//		Object[] values = morseAlphabet.values().toArray();
+//		
+//		for(int index = 0; index < values.length; index++) {
+//			System.out.println(values[index]);
+//		}
 		
+		List<Object> valuesList = new ArrayList<Object>(morseAlphabet.values());
+		Collections.shuffle(valuesList);
 		
+		letter = (String)valuesList.get(0);
+	
+		
+		return letter;
 		
 	}
 	
-	//Alphabet random number 
 	
-	private static <String>
-		String getRandomElement(Set<? extends String> set) {
-			Random random = new Random();
-			
-			int randomNumber = random.nextInt(set.size());
-			Iterator<? extends String> iterator = set.iterator();
-			int currentIndex = 0;
-			
-			String randomElement = null;
-			
-			while(iterator.hasNext()) {
-				randomElement = iterator.next();
-				
-				if(currentIndex == randomNumber) 
-					return randomElement;
-				
-				
-				currentIndex++;
-			}
-			return randomElement;
-	}
-	
-	public static String processTextSentences(String text) {
-		String response = "You said: ";
+	public String processTextSentences(String text) {
+		String response = "";
 		
 		response += text + "\n";
 		
 		return response;
 	}
 	
-	public static String processTextAlphabet(String text) {
-		String response = "You said: ";
+	public String processTextAlphabet(String text) {
+		String response = "";
 		response += text + "\n";
 		
-		response += "Welcome to the Morse Code Alphabet, characters will be presented to you in either morse code or as letters, please type in the corresponding letter or morse code" + "\n";
-		response += "For example: if the screen displays A please type in .-  , and visversa" + "\n";
+		response += alphabetMap() + "\n";
 		
 		return response;
 	}

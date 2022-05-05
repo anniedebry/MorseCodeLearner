@@ -33,7 +33,9 @@ public class AlphabetPanel extends JPanel
 		
 		this.alphabetField = new JTextField("Type here", 50);
 		this.alphabetPane = new JScrollPane();
-		this.alphabetArea = new JTextArea("Please press sumbit to begin", 20, 40);
+		this.alphabetArea = new JTextArea("Welcome to the Morse Code Alphabet, characters will be presented to you in either morse code or as letters, please type in the corresponding letter or morse code. For example: "
+				+ "if the screen displays A please type in .-  , and visversa" + "\n" + "Press submit to begin" + "\n" + "---------------" + "\n",  20, 40);
+		
 		alphabetArea.setEditable(false);
 		this.ioPanel = new JPanel(new GridLayout(1, 0));
 		this.submit = new JButton("Submit");
