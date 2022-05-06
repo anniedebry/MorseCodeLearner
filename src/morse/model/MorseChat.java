@@ -52,13 +52,6 @@ public class MorseChat
 		morseAlphabet.put("X", "-..-");
 		morseAlphabet.put("Y", "-.--");
 		morseAlphabet.put("Z", "--..");
-//		
-//		Random generator = new Random();
-//		Object[] values = morseAlphabet.values().toArray();
-//		
-//		for(int index = 0; index < values.length; index++) {
-//			System.out.println(values[index]);
-//		}
 		
 		List<Object> valuesList = new ArrayList<Object>(morseAlphabet.values());
 		Collections.shuffle(valuesList);
