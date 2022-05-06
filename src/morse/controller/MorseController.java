@@ -31,6 +31,7 @@ public class MorseController
 	public String interactWithMorseCodeAlphabet(String text) {
 		String response = "";
 		
+		response += chat.alphabetMap() + ("\n");
 		response += chat.processTextAlphabet(text);
 		
 		return response;

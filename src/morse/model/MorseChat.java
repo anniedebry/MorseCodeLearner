@@ -10,19 +10,21 @@ public class MorseChat
 {
 	private ArrayList<String> userInputs;
 	private ArrayList<String> chatResponses;
+	private String currentMorse;
 	
 	public MorseChat() {
 		this.userInputs = new ArrayList<String>();
 		this.chatResponses = new ArrayList<String>();
+		this.currentMorse = "";
 		
 		//alphabet hash map
 		
 	}
 	
 	//Alphabet random number 
-	private String alphabetMap() {
+	public String alphabetMap() {
 		
-		String letter = "";
+		String letter = new String(); 
 		
 		HashMap<String, String> morseAlphabet = new HashMap<String, String>();
 		
@@ -53,11 +55,11 @@ public class MorseChat
 		morseAlphabet.put("Y", "-.--");
 		morseAlphabet.put("Z", "--..");
 		
-		List<Object> valuesList = new ArrayList<Object>(morseAlphabet.values());
+		List<Object> valuesList = new ArrayList<Object>(morseAlphabet.keySet());
 		Collections.shuffle(valuesList);
 		
-		letter = (String)valuesList.get(0);
-	
+		currentMorse = (String)valuesList.get(0);
+		letter = (String)morseAlphabet.get(currentMorse);
 		
 		return letter;
 		
@@ -76,7 +78,13 @@ public class MorseChat
 		String response = "";
 		response += text + "\n";
 		
-		response += alphabetMap() + "\n";
+		if(text.equals(currentMorse)) {
+			System.out.println("Correct!");
+		} else {
+			System.out.println("Incorrect :(");
+		}
+		
+		
 		
 		return response;
 	}
