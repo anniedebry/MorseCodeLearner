@@ -76,15 +76,14 @@ public class MorseChat
 	
 	public String processTextAlphabet(String text) {
 		String response = "";
+		
 		response += text + "\n";
 		
 		if(text.equals(currentMorse)) {
-			System.out.println("Correct!");
+			response += "Correct!" + "\n";
 		} else {
-			System.out.println("Incorrect :(");
+			response += "Incorrect" + "\n";
 		}
-		
-		
 		
 		return response;
 	}

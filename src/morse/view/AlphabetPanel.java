@@ -25,6 +25,7 @@ public class AlphabetPanel extends JPanel
 	private JTextField alphabetField;
 	private JPanel ioPanel;
 	private JButton submit;
+	private JButton start;
 
 	public AlphabetPanel(MorseController controller) {
 		super();
@@ -34,11 +35,15 @@ public class AlphabetPanel extends JPanel
 		this.alphabetField = new JTextField("Type here", 50);
 		this.alphabetPane = new JScrollPane();
 		this.alphabetArea = new JTextArea("Welcome to the Morse Code Alphabet, characters will be presented to you in either morse code or as letters, please type in the corresponding letter or morse code. For example: "
-				+ "if the screen displays A please type in .-  , and visversa" + "\n" + "Press submit to begin" + "\n" + "---------------" + "\n",  20, 40);
+				+ "if the screen displays A please type in .-  , and visversa" + "\n" + "Press start to receive morse to de-code" + "\n" + "---------------" + "\n",  20, 40);
 		
 		alphabetArea.setEditable(false);
 		this.ioPanel = new JPanel(new GridLayout(1, 0));
 		this.submit = new JButton("Submit");
+		this.start = new JButton("Start");
+		layout.putConstraint(SpringLayout.NORTH, start, 6, SpringLayout.SOUTH, submit);
+		layout.putConstraint(SpringLayout.WEST, start, 0, SpringLayout.WEST, submit);
+		layout.putConstraint(SpringLayout.EAST, start, 75, SpringLayout.WEST, submit);
 		
 		setupPanel();
 		setupAlphabetPane();
@@ -53,6 +58,7 @@ public class AlphabetPanel extends JPanel
 		this.add(alphabetPane);
 		this.add(alphabetField);
 		this.add(submit);
+		this.add(start);
 
 	}
 	
@@ -70,6 +76,7 @@ public class AlphabetPanel extends JPanel
 	
 	private void setupListeners() {
 		submit.addActionListener(click -> alphabetArea.append(controller.interactWithMorseCodeAlphabet(alphabetField.getText())));
+		start.addActionListener(click -> alphabetArea.append(controller.processMorseCodeAlphabet(alphabetField.getText())));
 	}
 	
 	private void setupLayout() {

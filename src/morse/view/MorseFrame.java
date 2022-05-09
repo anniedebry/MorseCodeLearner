@@ -44,7 +44,7 @@ public class MorseFrame extends JFrame
 		//card layout setup
 		
 		cardPanel.add(menuPanel, "Menu");
-		cardPanel.add(sentencesPanel, "Sentences");
+		cardPanel.add(sentencesPanel, "Sentences"); 
 		cardPanel.add(alphabetPanel, "Alphabet");
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

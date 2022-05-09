@@ -28,10 +28,17 @@ public class MorseController
 		return response;
 	}
 	
-	public String interactWithMorseCodeAlphabet(String text) {
+	public String processMorseCodeAlphabet(String text) {
 		String response = "";
 		
 		response += chat.alphabetMap() + ("\n");
+		
+		return response;
+	}
+	
+	public String interactWithMorseCodeAlphabet(String text) {
+		String response = "";
+		
 		response += chat.processTextAlphabet(text);
 		
 		return response;
