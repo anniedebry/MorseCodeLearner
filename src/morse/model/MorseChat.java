@@ -21,6 +21,21 @@ public class MorseChat
 		
 	}
 	
+	//Sentences HashMap
+	
+	public String sentenceMap() {
+		String sentences = new String();
+		
+		HashMap<String, String> morseSentence = new HashMap<String, String>();
+		
+		morseSentence.put("the quick brown fox jumps over the lazy dog", "- .... . --.- ..- .. -.-. -.- -... .-. ---"
+				+ ".-- -. ..-. --- -..- .--- ..- -- .--. ... --- ...- . .-. - .... . .-.. .- --.. -.-- -.. --- --.");
+		morseSentence.put("man I love fishing", "-- .- -. .. .-.. --- ...- . ..-. .. ... .... .. -. --.");
+		morseSentence.put("hairy balls is a plant", ".... .- .. .-. -.-- -... .- .-.. .-.. ... .. ... .- .--. .-.. .- -. -");
+		
+		return sentences;
+	}
+	
 	//Word HashMap
 	public String wordMap() {
 		String letters = new String();
