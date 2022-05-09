@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UpdateControllerTest
+class ControllerTest
 {
 	private MorseController testedController;
 
@@ -25,13 +25,13 @@ class UpdateControllerTest
 	}
 
 	@Test
-	void testBuildPokedexText()
+	void  testInteractWithMorseCodeSentences()
 	{
 		assertTrue(testedController != null, "Can't be null");
 	}
 
 	@Test
-	void testGetPokemonData()
+	void testProcessMorseCodeAlphabet()
 	{
 		assertEquals("Description", testedController.toString(), "Words match");
 	}
