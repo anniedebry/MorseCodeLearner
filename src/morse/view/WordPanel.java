@@ -1,5 +1,6 @@
 package morse.view;
 
+
 import morse.controller.MorseController;
 import javax.swing.JPanel;
 
@@ -85,4 +86,5 @@ public class WordPanel extends JPanel
 		layout.putConstraint(SpringLayout.WEST, start, 0, SpringLayout.WEST, submit);
 		layout.putConstraint(SpringLayout.EAST, start, 75, SpringLayout.WEST, submit);
 	}
+
 }

@@ -113,7 +113,10 @@ public class MorseChat
 	public String processTextAlphabet(String text) {
 		String response = "";
 		
+<<<<<<< Updated upstream
 		response += text + "\n";
+=======
+>>>>>>> Stashed changes
 		
 		if(text.equals(currentMorse)) {
 			response += "Correct!" + "\n";
@@ -121,6 +124,13 @@ public class MorseChat
 			response += "Incorrect" + "\n";
 		}
 		
+<<<<<<< Updated upstream
+=======
+		response += text + "\n";
+		
+		
+		
+>>>>>>> Stashed changes
 		return response;
 	}
 	
