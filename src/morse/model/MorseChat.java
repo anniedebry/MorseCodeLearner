@@ -11,17 +11,40 @@ public class MorseChat
 	private ArrayList<String> userInputs;
 	private ArrayList<String> chatResponses;
 	private String currentMorse;
+	private String currentWordMorse;
 	
 	public MorseChat() {
 		this.userInputs = new ArrayList<String>();
 		this.chatResponses = new ArrayList<String>();
 		this.currentMorse = "";
 		
-		//alphabet hash map
 		
 	}
 	
-	//Alphabet random number 
+	//Word HashMap
+	public String wordMap() {
+		String letters = new String();
+		
+		HashMap<String, String> morseWords = new HashMap<String, String>();
+		
+		morseWords.put("poop", ".--. --- --- .--.");
+		morseWords.put("balls", "-... .- .-.. .-.. ...");
+		morseWords.put("toes", "- --- . ...");
+		morseWords.put("twerk", "- .-- . .-. -.-");
+		morseWords.put("roblox", ".-. --- -... .-.. --- -..-");
+		morseWords.put("minions", "-- .. -. .. --- -. ...");
+		morseWords.put("milf", "-- .. .-.. ..-.");
+		
+		List<Object> wordValuesList = new ArrayList<Object>(morseWords.keySet());
+		Collections.shuffle(wordValuesList);
+		
+		currentWordMorse = (String)wordValuesList.get(0);
+		letters = (String)morseWords.get(currentWordMorse);
+		
+		return letters;
+	}
+	
+	//Alphabet HashMap
 	public String alphabetMap() {
 		
 		String letter = new String(); 
@@ -65,6 +88,19 @@ public class MorseChat
 		
 	}
 	
+	public String processTextWords(String text) {
+		String response = "";
+		
+		response += text + "\n";
+		
+		if(text.equals(currentWordMorse)) {
+			response += "Correct!" + "\n";
+		} else {
+			response += "Incorrect" + "\n";
+		}
+		
+		return response;
+	}
 	
 	public String processTextSentences(String text) {
 		String response = "";

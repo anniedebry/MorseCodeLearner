@@ -20,6 +20,7 @@ public class MorseFrame extends JFrame
 	private JPanel cardPanel;
 	public SentencesPanel sentencesPanel;
 	public AlphabetPanel alphabetPanel;
+	public WordPanel wordPanel;
 	
 	public MorseFrame(MorseController app) {
 		super();
@@ -30,6 +31,7 @@ public class MorseFrame extends JFrame
 		this.cardPanel = new JPanel(new CardLayout());
 		this.sentencesPanel = new SentencesPanel(this.app);
 		this.alphabetPanel = new AlphabetPanel(this.app);
+		this.wordPanel = new WordPanel(this.app);
 		
 		setupFrame();
 	}
@@ -46,6 +48,7 @@ public class MorseFrame extends JFrame
 		cardPanel.add(menuPanel, "Menu");
 		cardPanel.add(sentencesPanel, "Sentences"); 
 		cardPanel.add(alphabetPanel, "Alphabet");
+		cardPanel.add(wordPanel, "Words");
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setContentPane(cardPanel);

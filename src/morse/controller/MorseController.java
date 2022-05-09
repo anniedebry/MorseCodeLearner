@@ -44,6 +44,22 @@ public class MorseController
 		return response;
 	}
 	
+	public String processMorseCodeWords(String text) {
+		String response = "";
+		
+		response += chat.processTextWords(text);
+		
+		return response;
+	}
+	
+	public String interactWithMorseWords(String text) {
+		String response = "";
+		
+		response += chat.wordMap() + ("\n");
+		
+		return response;
+	}
+	
 	
 	public void handleError(Exception error) {
 		JOptionPane.showMessageDialog(frame, error.getMessage(), "Morse Code Error!", JOptionPane.ERROR_MESSAGE);

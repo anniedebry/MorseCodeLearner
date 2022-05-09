@@ -66,6 +66,7 @@ public class MorsePanel extends JPanel
 		
 		sentences.addActionListener(click -> controller.getFrame().changeScreen("Sentences"));
 		alphabet.addActionListener(click -> controller.getFrame().changeScreen("Alphabet"));
+		words.addActionListener(click -> controller.getFrame().changeScreen("Words"));
 	}
 	
 	public void setupLayout() {
