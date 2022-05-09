@@ -4,6 +4,8 @@ import morse.controller.MorseController;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.swing.JFrame;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,7 +35,7 @@ class ControllerTest
 	@Test
 	void testProcessMorseCodeAlphabet()
 	{
-		assertEquals("Description", testedController.toString(), "Words match");
+		assertTrue(testedController.getFrame() instanceof JFrame, "getFrame  must return a frame");
 	}
 
 }
