@@ -68,6 +68,7 @@ public class WordPanel extends JPanel
 	}
 	
 	private void setupListeners() {
+		
 		start.addActionListener(click -> wordArea.append(controller.interactWithMorseWords(wordField.getText())));
 		submit.addActionListener(click -> wordArea.append(controller.processMorseCodeWords(wordField.getText())));
 	}

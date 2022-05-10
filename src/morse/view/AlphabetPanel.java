@@ -26,6 +26,7 @@ public class AlphabetPanel extends JPanel
 	private JPanel ioPanel;
 	private JButton submit;
 	private JButton start;
+	private JButton back;
 
 	public AlphabetPanel(MorseController controller) {
 		super();
@@ -41,6 +42,7 @@ public class AlphabetPanel extends JPanel
 		this.ioPanel = new JPanel(new GridLayout(1, 0));
 		this.submit = new JButton("Submit");
 		this.start = new JButton("Start");
+		this.back = new JButton("Back");
 		layout.putConstraint(SpringLayout.NORTH, start, 6, SpringLayout.SOUTH, submit);
 		layout.putConstraint(SpringLayout.WEST, start, 0, SpringLayout.WEST, submit);
 		layout.putConstraint(SpringLayout.EAST, start, 75, SpringLayout.WEST, submit);
@@ -59,6 +61,7 @@ public class AlphabetPanel extends JPanel
 		this.add(alphabetField);
 		this.add(submit);
 		this.add(start);
+		this.add(back);
 
 	}
 	
@@ -77,6 +80,7 @@ public class AlphabetPanel extends JPanel
 	private void setupListeners() {
 		submit.addActionListener(click -> alphabetArea.append(controller.interactWithMorseCodeAlphabet(alphabetField.getText())));
 		start.addActionListener(click -> alphabetArea.append(controller.processMorseCodeAlphabet(alphabetField.getText())));
+		back.addActionListener(click -> controller.getFrame().changeScreen("Menu"));
 	}
 	
 	private void setupLayout() {

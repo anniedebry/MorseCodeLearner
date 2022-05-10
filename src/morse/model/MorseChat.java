@@ -20,6 +20,7 @@ public class MorseChat
 		
 		
 	}
+
 	
 	//Sentences HashMap
 	
@@ -32,6 +33,7 @@ public class MorseChat
 				+ ".-- -. ..-. --- -..- .--- ..- -- .--. ... --- ...- . .-. - .... . .-.. .- --.. -.-- -.. --- --.");
 		morseSentence.put("man I love fishing", "-- .- -. .. .-.. --- ...- . ..-. .. ... .... .. -. --.");
 		morseSentence.put("hairy balls is a plant", ".... .- .. .-. -.-- -... .- .-.. .-.. ... .. ... .- .--. .-.. .- -. -");
+		morseSentence.put("tails I miss my wife", "- .- .. .-.. ... .. -- .. ... ... -- -.-- .-- .. ..-. .");
 		
 		return sentences;
 	}
@@ -49,6 +51,7 @@ public class MorseChat
 		morseWords.put("roblox", ".-. --- -... .-.. --- -..-");
 		morseWords.put("minions", "-- .. -. .. --- -. ...");
 		morseWords.put("milf", "-- .. .-.. ..-.");
+		morseWords.put("garfeild", "--. .- .-. ..-. . .. .-.. -..");
 		
 		List<Object> wordValuesList = new ArrayList<Object>(morseWords.keySet());
 		Collections.shuffle(wordValuesList);
