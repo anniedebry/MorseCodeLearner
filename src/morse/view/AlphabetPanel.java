@@ -43,9 +43,6 @@ public class AlphabetPanel extends JPanel
 		this.submit = new JButton("Submit");
 		this.start = new JButton("Start");
 		this.back = new JButton("Back");
-		layout.putConstraint(SpringLayout.NORTH, start, 6, SpringLayout.SOUTH, submit);
-		layout.putConstraint(SpringLayout.WEST, start, 0, SpringLayout.WEST, submit);
-		layout.putConstraint(SpringLayout.EAST, start, 75, SpringLayout.WEST, submit);
 		
 		setupPanel();
 		setupAlphabetPane();
@@ -93,5 +90,10 @@ public class AlphabetPanel extends JPanel
 		layout.putConstraint(SpringLayout.EAST, alphabetField, -175, SpringLayout.EAST, this);
 		layout.putConstraint(SpringLayout.NORTH, submit, 0, SpringLayout.NORTH, alphabetField);
 		layout.putConstraint(SpringLayout.WEST, submit, 6, SpringLayout.EAST, alphabetField);
+		layout.putConstraint(SpringLayout.NORTH, back, 0, SpringLayout.NORTH, start);
+		layout.putConstraint(SpringLayout.WEST, back, 10, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, start, 6, SpringLayout.SOUTH, submit);
+		layout.putConstraint(SpringLayout.WEST, start, 0, SpringLayout.WEST, submit);
+		layout.putConstraint(SpringLayout.EAST, start, 75, SpringLayout.WEST, submit);
 	}
 }

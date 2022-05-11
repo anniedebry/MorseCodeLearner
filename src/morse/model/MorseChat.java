@@ -12,6 +12,7 @@ public class MorseChat
 	private ArrayList<String> chatResponses;
 	private String currentMorse;
 	private String currentWordMorse;
+	private String currentSentenceMorse;
 	
 	public MorseChat() {
 		this.userInputs = new ArrayList<String>();
@@ -34,6 +35,12 @@ public class MorseChat
 		morseSentence.put("man I love fishing", "-- .- -. .. .-.. --- ...- . ..-. .. ... .... .. -. --.");
 		morseSentence.put("hairy balls is a plant", ".... .- .. .-. -.-- -... .- .-.. .-.. ... .. ... .- .--. .-.. .- -. -");
 		morseSentence.put("tails I miss my wife", "- .- .. .-.. ... .. -- .. ... ... -- -.-- .-- .. ..-. .");
+		
+		List<Object> sentenceValuesList = new ArrayList<Object>(morseSentence.keySet());
+		Collections.shuffle(sentenceValuesList);
+		
+		currentSentenceMorse = (String)sentenceValuesList.get(0);
+		sentences = (String)morseSentence.get(currentSentenceMorse);
 		
 		return sentences;
 	}
@@ -124,6 +131,12 @@ public class MorseChat
 		String response = "";
 		
 		response += text + "\n";
+		
+		if(text.equals(currentSentenceMorse)) {
+			response += "Correct!" + "\n";
+		} else {
+			response += "Incorrect" + "\n";
+		}
 		
 		return response;
 	}

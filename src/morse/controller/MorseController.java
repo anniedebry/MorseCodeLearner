@@ -20,10 +20,18 @@ public class MorseController
 		JOptionPane.showMessageDialog(frame, "Welcome to Morse Code Learner!");
 	}
 	
+	public String processMorseCodeSentences(String text) {
+		String response = "";
+		
+		response += chat.sentenceMap() + ("\n");
+		
+		return response;
+	}
+	
 	public String interactWithMorseCodeSentences(String text) {
 		String response = "";
 		
-		response += chat.processTextSentences(text) + "/n";
+		response += chat.processTextSentences(text) + "\n";
 		
 		return response;
 	}

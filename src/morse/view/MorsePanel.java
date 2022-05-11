@@ -48,8 +48,8 @@ public class MorsePanel extends JPanel
 	
 	private void updateDisplay() {
 		String path = "/morse/view/images/";
-		String defaultName = "morseCodeTitle";
-		String extension = ".jpg";
+		String defaultName = "MorseCodeTitle";
+		String extension = ".png";
 		
 		try {
 			titleImage = new ImageIcon(getClass().getResource(path + extension));

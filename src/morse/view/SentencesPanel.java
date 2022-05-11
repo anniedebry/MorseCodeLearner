@@ -26,6 +26,8 @@ public class SentencesPanel extends JPanel
 	private JTextField sentencesField;
 	private JPanel ioPanel;
 	private JButton submit;
+	private JButton start;
+	private JButton back; 
 
 	public SentencesPanel(MorseController controller) {
 		super();
@@ -34,10 +36,12 @@ public class SentencesPanel extends JPanel
 		
 		this.sentencesField = new JTextField("Type here", 50);
 		this.sentencesPane = new JScrollPane();
-		this.sentencesArea = new JTextArea("Text Area", 20, 40);
+		this.sentencesArea = new JTextArea("Sentences are layed out without specific spaces between letters, you must place the spaces where they make the most sense" + "\n" + "---------------------" + "\n", 20, 40);
 		sentencesArea.setEditable(false);
 		this.ioPanel = new JPanel(new GridLayout(1, 0));
 		this.submit = new JButton("Submit");
+		this.start = new JButton("Start");
+		this.back = new JButton("Back");
 		
 		setupPanel();
 		setupSentencesPane();
@@ -52,6 +56,8 @@ public class SentencesPanel extends JPanel
 		this.add(sentencesPane);
 		this.add(sentencesField);
 		this.add(submit);
+		this.add(start);
+		this.add(back);
 
 	}
 	
@@ -69,6 +75,8 @@ public class SentencesPanel extends JPanel
 	
 	private void setupListeners() {
 		submit.addActionListener(click -> sentencesArea.append(controller.interactWithMorseCodeSentences(sentencesField.getText())));
+		start.addActionListener(click -> sentencesArea.append(controller.processMorseCodeSentences(sentencesField.getText())));
+		back.addActionListener(click -> controller.getFrame().changeScreen("Menu"));
 	}
 	
 	private void setupLayout() {
@@ -81,5 +89,9 @@ public class SentencesPanel extends JPanel
 		layout.putConstraint(SpringLayout.EAST, sentencesField, -175, SpringLayout.EAST, this);
 		layout.putConstraint(SpringLayout.NORTH, submit, 0, SpringLayout.NORTH, sentencesField);
 		layout.putConstraint(SpringLayout.WEST, submit, 6, SpringLayout.EAST, sentencesField);
+		layout.putConstraint(SpringLayout.NORTH, start, 6, SpringLayout.SOUTH, sentencesField);
+		layout.putConstraint(SpringLayout.WEST, start, 0, SpringLayout.WEST, submit);
+		layout.putConstraint(SpringLayout.NORTH, back, 0, SpringLayout.NORTH, start);
+		layout.putConstraint(SpringLayout.WEST, back, 10, SpringLayout.WEST, this);
 	}
 }

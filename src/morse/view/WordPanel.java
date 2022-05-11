@@ -22,6 +22,7 @@ public class WordPanel extends JPanel
 	private JPanel ioPanel;
 	private JButton submit;
 	private JButton start;
+	private JButton back;
 	
 	public WordPanel(MorseController controller) {
 		super();
@@ -37,6 +38,7 @@ public class WordPanel extends JPanel
 		this.ioPanel = new JPanel(new GridLayout(1, 0));
 		this.submit = new JButton("Submit");
 		this.start = new JButton("Start");
+		this.back = new JButton("Back");
 		
 		setupPanel();
 		setupAlphabetPane();
@@ -52,6 +54,7 @@ public class WordPanel extends JPanel
 		this.add(wordField);
 		this.add(submit);
 		this.add(start);
+		this.add(back);
 
 	}
 	
@@ -68,9 +71,11 @@ public class WordPanel extends JPanel
 	}
 	
 	private void setupListeners() {
+
 		
 		start.addActionListener(click -> wordArea.append(controller.interactWithMorseWords(wordField.getText())));
 		submit.addActionListener(click -> wordArea.append(controller.processMorseCodeWords(wordField.getText())));
+		back.addActionListener(click -> controller.getFrame().changeScreen("Menu"));
 	}
 	
 	private void setupLayout() {
@@ -86,6 +91,9 @@ public class WordPanel extends JPanel
 		layout.putConstraint(SpringLayout.NORTH, start, 6, SpringLayout.SOUTH, submit);
 		layout.putConstraint(SpringLayout.WEST, start, 0, SpringLayout.WEST, submit);
 		layout.putConstraint(SpringLayout.EAST, start, 75, SpringLayout.WEST, submit);
+		layout.putConstraint(SpringLayout.NORTH, back, 0, SpringLayout.NORTH, start);
+		layout.putConstraint(SpringLayout.WEST, back, 10, SpringLayout.WEST, this);
+		
 	}
 
 }
